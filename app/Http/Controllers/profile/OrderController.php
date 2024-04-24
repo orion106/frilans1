@@ -11,7 +11,7 @@ class OrderController extends Controller
 {
     public function create(Request $request): View
     {
-        return view('profile.order',[
+        return view('profile.list_order',[
         'user' => $request->user(),
         ]);
     }
