@@ -3,7 +3,6 @@
     <div class="header-profile">
         <div>
             <img src="{{asset('/img/Component 6.png')}}" alt="Profile avatar">
-            <h6>id:{{$user -> id}}</h6>
             <h1>Иванов Иван</h1>
         </div>
         <a>

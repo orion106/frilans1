@@ -6,14 +6,20 @@
             <h1>Иванов Иван</h1>
         </div>
         <a>
-        <button>Добавить работу</button>
+            <button>Добавить работу</button>
         </a>
     </div>
 </section>
 <div class="profile-main container">
-        <div class="profile-main-content">
-            Создание заказа
-        </div>
+    <form class="create_order_form">
+        <x-profile.input-profile>
+            placeholder="Имя заказа" type="text""
+        </x-profile.input-profile>
+
+        <x-profile.input-profile>
+            placeholder="Опишите заказ" type="text""
+        </x-profile.input-profile>
+    </form>
     <x-profile.sidebar>
     </x-profile.sidebar>
 </div>
