@@ -3,6 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\profile\OrderController;
+use App\Http\Controllers\profile\OrderHistoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,8 @@ Route::middleware('Customer')->group(function () {
     Route::get('profile/order', [OrderController::class, 'create'])->name('order');
 
     Route::post('profile/order', [OrderController::class, 'create']);
+
+    Route::post('profile/order-history',[OrderHistoryController::class, 'create'])->name('create_order');
 });
 require __DIR__.'/auth.php';
 
