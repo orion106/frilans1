@@ -23,7 +23,6 @@ Route::get('/q', function () {
 });
 Route::middleware('Customer')->group(function () {
     Route::get('profile/order', [OrderController::class, 'create'])->name('order');
-
     Route::post('profile/order', [OrderController::class, 'create']);
 });
 require __DIR__.'/auth.php';
