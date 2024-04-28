@@ -3,7 +3,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\profile\OrderController;
-use App\Http\Controllers\profile\OrderHistoryController;
+use App\Http\Controllers\profile\OrderCreateController;
+use App\Http\Controllers\profile\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,12 +23,16 @@ Route::get('/', function () {
 Route::get('/q', function () {
     return view('q');
 });
+
+Route::get('profile/user/{id}', [UserController::class, 'index'])->name('user');
+
 Route::middleware('Customer')->group(function () {
+
     Route::get('profile/order', [OrderController::class, 'create'])->name('order');
 
     Route::post('profile/order', [OrderController::class, 'create']);
 
-    Route::post('profile/order-history',[OrderHistoryController::class, 'create'])->name('create_order');
+    Route::get('profile/order-create',[OrderCreateController::class, 'create'])->name('order-create');
 });
 require __DIR__.'/auth.php';
 

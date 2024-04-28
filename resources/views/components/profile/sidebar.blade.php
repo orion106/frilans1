@@ -20,6 +20,12 @@
             <h2>История заказов</h2>
         </x-profile.sidebar-button>
     </a>
+    <a href="{{route('messages')}}">
+        <x-profile.sidebar-button  :active="request()->is('profile/message')">
+            <img src="{{asset('img/Component 8.png')}}" alt="">
+            <h2>Сообщения</h2>
+        </x-profile.sidebar-button>
+    </a>
 
     <a href="{{route('logout')}}">
         <x-profile.sidebar-button class='bg-danger'>

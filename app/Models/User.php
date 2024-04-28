@@ -18,10 +18,4 @@ class User extends Authenticatable
             self::ROLE_CLIENT => 'Клиент',
         ];
     }
-    protected $fillable = [
-        'id',
-        'email',
-        'password',
-        'role'
-    ];
 }

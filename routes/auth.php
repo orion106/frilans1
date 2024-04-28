@@ -3,6 +3,8 @@
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\profile\ProfileController;
+use App\Http\Controllers\profile\MessageController;
+use App\Http\Controllers\profile\MessagesController;
 use App\Http\Controllers\Auth\LogoutController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +20,10 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    Route::get('/profile/message/{id}',[MessageController::class, 'index'] )->name('message');
+
+    Route::get('/profile/messages',[MessagesController::class, 'index'] )->name('messages');
+
     Route::get('/profile',[ProfileController::class, 'create'] )->name('profile');
 
     Route::post('/profile',[ProfileController::class, 'update']);

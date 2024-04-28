@@ -6,11 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class OrderHistoryController extends Controller
+class OrderCreateController extends Controller
 {
     public function create(Request $request): View
     {
-        return view('profile.create_order',[
+        return view('profile.order-create',[
             'user' => $request->user(),
         ]);
     }
