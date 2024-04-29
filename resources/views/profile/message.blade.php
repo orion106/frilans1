@@ -33,36 +33,23 @@
             <hr class="hr-message">
         </div>
         <div class="chat__content">
-            <div>
-                @foreach($message as $messages)
-                    @if($messages['sender_id'] === $user->id)
-                        <div class="chat__item">
-                            <img class="header-message-img" src="{{asset('/img/Component 6.png')}}" alt="Profile avatar">
-                            <div class="chat__messages">
-                                <div class="chat__message">
-                                    <div class="chat__message-content">
-                                        {{$messages['message']}}
-                                    </div>
-                                </div>
-                            </div>
+            <div id="chatAndMessage">
+                @foreach ($message as $msg)
+                    @if ($msg->sender_id == auth()->user()->id)
+                        <div class="messageInChat">
+                            <div class="messageClient">{{ $msg->message }}ff</div>
                         </div>
-                    @endif
-
-                    @if($messages['receiver_id'] === $user->id)
-                        <div class="chat__item chat__item--responder">
-                            <img class="header-message-img" src="{{asset('/img/Component 6.png')}}" alt="Profile avatar">
-                            <div class="chat__messages">
-                                <div class="chat__message">
-                                    <div class="chat__message-content">
-                                        {{$messages['message']}}
-                                    </div>
-                                </div>
-                            </div>
+                    @else
+                        <div class="messageInChat">
+                            <div class="messageManager">{{ $msg->message }}hh</div>
                         </div>
                     @endif
                 @endforeach
             </div>
         </div>
+
+
+
             <form action="{{route('message', ['id' => $user->id])}}"  method="POST" class="chat-input">
                 @csrf
                 <x-profile.input-profile>
@@ -77,3 +64,5 @@
     <x-profile.sidebar>
     </x-profile.sidebar>
 </div>
+
+

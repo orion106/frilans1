@@ -14,14 +14,12 @@ class MessageController extends Controller
 {
     public function index($id){
         $user_id = auth()->user()->id;
-        $receiver_message = Message::where('sender_id', $id)->get();
-        $my_message = Message::where('sender_id', $user_id)->get();
-        $message = collect(array_merge($receiver_message->toArray(),$my_message->toArray()));
+        $receiver_message = Message::where('sender_id', $id)->where('receiver_id',$user_id)->get();
         $user = User::all()->find($id);
         return view('profile.message', [
-            'id' => $user_id,
+            'id' => $id,
             'user' => $user,
-            'message' => $message,
+            'message' => $receiver_message,
         ]);
     }
     public function create(Request $request, $id)
