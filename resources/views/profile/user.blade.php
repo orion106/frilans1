@@ -3,10 +3,10 @@
     <div class="header-profile">
         <div>
             <img src="{{asset('/img/Component 6.png')}}" alt="Profile avatar">
-            <h1>Иванов Иван</h1>
+            <h1>{{$user->firstname}} {{$user->surname}}</h1>
         </div>
         <a>
-            <button>Добавить работу</button>
+            <button>Написать сообщение</button>
         </a>
     </div>
 </section>
@@ -33,22 +33,21 @@
                         placeholder="Отчёсво" type="text" name="lastname" value="{{$user->lastname}}" disabled
                     </x-profile.input-profile>
                 </div>
+            @if($group != null)
                 <div class="profile-label">
                     <label>Номер группы</label>
                     <x-profile.input-profile>
-                        placeholder="Отчёсво" type="text" name="lastname" value="{{$user->lastname}}" disabled
+                        placeholder="Отчёсво" type="text" name="lastname" value="{{$group ->number_group}}" disabled
                     </x-profile.input-profile>
                 </div>
-                    <div class="profile-label">
-                        <label>Номер группы</label>
-                        <x-profile.input-profile>
-                            placeholder="Фамилия" disabled type="text" value="{{$group ->course}} курс" disabled
-                        </x-profile.input-profile>
-                    </div>
-
+                <div class="profile-label">
+                    <label>Номер группы</label>
+                    <x-profile.input-profile>
+                        placeholder="Фамилия" disabled type="text" value="{{$group ->course}} курс"
+                    </x-profile.input-profile>
+                </div>
+            @endif
         </div>
     </div>
-    <x-profile.sidebar>
-    </x-profile.sidebar>
 </div>
 

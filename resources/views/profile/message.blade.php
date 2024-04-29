@@ -10,6 +10,9 @@
         </a>
     </div>
 </section>
+<script>
+
+</script>
 <div class="profile-main container">
     <div class="profile-main-content message-block">
         <div>
@@ -31,46 +34,45 @@
         </div>
         <div class="chat__content">
             <div>
-                <div class="chat__item">
-                    <img class="header-message-img" src="{{asset('/img/Component 6.png')}}" alt="Profile avatar">
-
-                    <div class="chat__messages">
-                        <div class="chat__message">
-                            <div class="chat__message-content">Hi</div>
+                @foreach($message as $messages)
+                    @if($messages['sender_id'] === $user->id)
+                        <div class="chat__item">
+                            <img class="header-message-img" src="{{asset('/img/Component 6.png')}}" alt="Profile avatar">
+                            <div class="chat__messages">
+                                <div class="chat__message">
+                                    <div class="chat__message-content">
+                                        {{$messages['message']}}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                    @endif
 
-                        <div class="chat__message">
-                            <div class="chat__message-content">How are you?</div>
+                    @if($messages['receiver_id'] === $user->id)
+                        <div class="chat__item chat__item--responder">
+                            <img class="header-message-img" src="{{asset('/img/Component 6.png')}}" alt="Profile avatar">
+                            <div class="chat__messages">
+                                <div class="chat__message">
+                                    <div class="chat__message-content">
+                                        {{$messages['message']}}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="chat__item chat__item--responder">
-                    <img class="header-message-img" src="{{asset('/img/Component 6.png')}}" alt="Profile avatar">
-
-                    <div class="chat__messages">
-                        <div class="chat__message">
-                            <div class="chat__message-content">Hello</div>
-                        </div>
-
-                        <div class="chat__message">
-                            <div class="chat__message-content">I'm fine. Let's have a dinner today.</div>
-                        </div>
-
-                        <div class="chat__message">
-                            <div class="chat__message-content">What do you think about it?</div>
-                        </div>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
             </div>
         </div>
-        <div class="chat-input">
-            <x-profile.input-profile>
-                placeholder="Написать сообщение....." type="text"
-            </x-profile.input-profile>
+            <form action="{{route('message', ['id' => $user->id])}}"  method="POST" class="chat-input">
+                @csrf
+                <x-profile.input-profile>
+                    placeholder="Написать сообщение....." type="text" name="message"
+                </x-profile.input-profile>
 
-            <img class="header-message-img" src="{{asset('/img/PaperPlane.svg')}}" alt="Profile avatar">
-        </div>
+                <button class="chat-button">
+                    <img  src="{{asset('/img/PaperPlane.svg')}}" alt="Profile avatar">
+                </button>
+            </form>
     </div>
     <x-profile.sidebar>
     </x-profile.sidebar>

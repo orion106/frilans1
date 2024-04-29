@@ -445,3 +445,10 @@ nav a button img{
     width: 90%;
     margin-left: 0;
 }
+.chat-button{
+    padding: 0;
+    background-color: #181D1C;
+    border: none;
+    font: inherit;
+    color: inherit;
+}

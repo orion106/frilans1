@@ -22,6 +22,8 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/profile/message/{id}',[MessageController::class, 'index'] )->name('message');
 
+    Route::post('/profile/message/{id}',[MessageController::class, 'create']);
+
     Route::get('/profile/messages',[MessagesController::class, 'index'] )->name('messages');
 
     Route::get('/profile',[ProfileController::class, 'create'] )->name('profile');

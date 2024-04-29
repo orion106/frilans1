@@ -21,7 +21,7 @@
         </x-profile.sidebar-button>
     </a>
     <a href="{{route('messages')}}">
-        <x-profile.sidebar-button  :active="request()->is('profile/message')">
+        <x-profile.sidebar-button  :active="request()->is('profile/messages')">
             <img src="{{asset('img/Component 8.png')}}" alt="">
             <h2>Сообщения</h2>
         </x-profile.sidebar-button>

@@ -15,7 +15,7 @@
         <h1>Профиль</h1>
         <hr>
         <div class="profile-main-inform">
-            <form action="" method="POST">
+            <form action="{{route('profile')}}" method="POST">
                 @csrf
                 <div class="profile-label">
                     <label>Имя</label>
