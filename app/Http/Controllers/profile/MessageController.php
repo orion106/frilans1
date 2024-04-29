@@ -14,7 +14,9 @@ class MessageController extends Controller
 {
     public function index($id){
         $user_id = auth()->user()->id;
-        $receiver_message = Message::where('sender_id', $id)->where('receiver_id',$user_id)->get();
+        $receiver_messag = Message::where('sender_id', $id)->where('receiver_id',$user_id)->get();
+        $receiver_messa = Message::where('sender_id', $user_id)->where('receiver_id',$id)->get();
+        $receiver_message = $receiver_messa->merge($receiver_messa);
         $user = User::all()->find($id);
         return view('profile.message', [
             'id' => $id,

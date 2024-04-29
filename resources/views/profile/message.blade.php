@@ -35,7 +35,7 @@
         <div class="chat__content">
             <div id="chatAndMessage">
                 @foreach ($message as $msg)
-                    @if ($msg->sender_id == auth()->user()->id)
+                    @if ($msg->sender_id == $id)
                         <div class="messageInChat">
                             <div class="messageClient">{{ $msg->message }}ff</div>
                         </div>
