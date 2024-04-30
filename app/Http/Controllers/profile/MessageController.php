@@ -14,12 +14,12 @@ class MessageController extends Controller
 {
     public function index($id){
         $user_id = auth()->user()->id;
-        $receiver_messag = Message::where('sender_id', $id)->where('receiver_id',$user_id)->get();
-        $receiver_messa = Message::where('sender_id', $user_id)->where('receiver_id',$id)->get();
-        $receiver_message = $receiver_messa->merge($receiver_messa);
+        $receiver_messag = Message::where('sender_id', $id)->where('receiver_id', $user_id)->get();
+        $receiver_messa = Message::where('sender_id', $user_id)->where('receiver_id', $id)->get();
+        $receiver_message = $receiver_messag->concat($receiver_messa)->sortBy('created_at');
         $user = User::all()->find($id);
         return view('profile.message', [
-            'id' => $id,
+
             'user' => $user,
             'message' => $receiver_message,
         ]);
@@ -35,6 +35,7 @@ class MessageController extends Controller
                 'receiver_id' => $id,
             ]);
         }
+        $chat = Chat::all()->where('sender_id', $user_id)->where('receiver_id',$id)->first();
         if($chat ===  null){
             $chat =  Chat::all()->where('sender_id', $id)->where('receiver_id',$user_id)->first();
         }

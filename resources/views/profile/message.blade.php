@@ -18,8 +18,8 @@
         <div>
             <div class="header-message">
                 <div class="header-message-exit">
-                    <img src="{{asset('/img/Component2.svg')}}">
                     <a href="{{route('messages')}}">
+                    <img src="{{asset('/img/Component2.svg')}}">
                     <span>Назад</span>
                     </a>
                 </div>
@@ -32,18 +32,12 @@
             </div>
             <hr class="hr-message">
         </div>
-        <div class="chat__content">
+        <div class="chat__content example" id="block" >
             <div id="chatAndMessage">
                 @foreach ($message as $msg)
-                    @if ($msg->sender_id == $id)
                         <div class="messageInChat">
-                            <div class="messageClient">{{ $msg->message }}ff</div>
+                            <div class="{{ $msg->sender_id == auth()->user()->id ? 'messageManager' : 'messageClient' }}">{{ $msg->message }}</div>
                         </div>
-                    @else
-                        <div class="messageInChat">
-                            <div class="messageManager">{{ $msg->message }}hh</div>
-                        </div>
-                    @endif
                 @endforeach
             </div>
         </div>
@@ -53,7 +47,7 @@
             <form action="{{route('message', ['id' => $user->id])}}"  method="POST" class="chat-input">
                 @csrf
                 <x-profile.input-profile>
-                    placeholder="Написать сообщение....." type="text" name="message"
+                    placeholder="Написать сообщение....." type="text" name="message" autofocus
                 </x-profile.input-profile>
 
                 <button class="chat-button">

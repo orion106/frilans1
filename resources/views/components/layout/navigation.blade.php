@@ -7,6 +7,7 @@
     <title>Your Title Here</title>
     <link rel="stylesheet" type="text/css" href="{{ url('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/main.js') }}">
 </head>
 <body>
 <header class="d-flex align-items-center">
