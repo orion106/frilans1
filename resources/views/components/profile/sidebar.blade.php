@@ -7,7 +7,7 @@
     </a>
 
 @if(auth()->user()->role == 2)
-    <a href="{{route('create_order')}}">
+    <a href="{{route('order-create')}}">
         <x-profile.sidebar-button  :active="request()->is('profile/order-history')">
             <img src="{{asset('img/Component 8.png')}}" alt="">
             <h2>Создание заказа</h2>

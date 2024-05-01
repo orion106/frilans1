@@ -456,3 +456,20 @@ nav a button img{
     font: inherit;
     color: inherit;
 }
+/*----------------chats-----------------------------------------------*/
+
+.message-list-block{
+    display: flex;
+}
+.image_user{
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.name_user{
+    padding-top: 30px;
+    padding-left: 30px;
+}
+.message_chat{
+    padding-top: 59px;
+    margin-left: -88px;
+}

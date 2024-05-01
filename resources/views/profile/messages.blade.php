@@ -13,17 +13,22 @@
 <div class="profile-main container">
     <div class="profile-main-content">
         @foreach($user as $users)
-            <a href="{{ route('message', ['id' => $users->id]) }}">
-            <div class="message-list-block">
-                <object>
-                    <a href="{{ route('user', ['id' => $users->id]) }}">
-                        <img src="{{asset('/img/Component 6.png')}}" alt="Profile avatar">
-                        <span>{{$users->surname}} {{$users->firstname}}</span>
-                    </a>
-                </object>
-                    <p> Сообщение</p>
+            <div class="wrapper_chat">
+                <a href="{{ route('message', ['id' => $users->id]) }}">
+                    <div class="message-list-block">
+                        <img class="image_user" src="{{asset('/img/Component 6.png')}}" alt="Profile avatar">
+                        <object>
+                            <a href="{{ route('user', ['id' => $users->id]) }}">
+
+                                <div class="name_user">
+                                    <span><b>{{$users->surname}} {{$users->firstname}}</b></span>
+                                </div>
+                            </a>
+                        </object>
+                        <p class="message_chat">Сообщение</p>
+                    </div>
+                </a>
             </div>
-            </a>
         @endforeach
     </div>
     <x-profile.sidebar>
