@@ -14,13 +14,15 @@ class User extends Authenticatable
         'password',
         'role'
     ];
-    const ROLE_USERS = 0;
-    const ROLE_CLIENT = 1;
+    const ROLE_USERS = 1;
+    const ROLE_CLIENT = 2;
+    const ROLE_ADMIN = 3;
     public static function getRoles()
     {
         return [
             self::ROLE_USERS => 'Пользователь',
             self::ROLE_CLIENT => 'Клиент',
+            self::ROLE_ADMIN => 'Админ'
         ];
     }
 }

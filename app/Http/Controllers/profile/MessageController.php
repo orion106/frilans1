@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\profile;
 
 use App\Http\Controllers\Controller;
-use App\Models\Chat;
+use App\Models\Chats;
 use App\Models\Message;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -27,17 +27,17 @@ class MessageController extends Controller
     public function create(Request $request, $id)
     {
         $user_id = auth()->user()->id;
-        $chat = Chat::all()->where('sender_id', $user_id)->where('receiver_id',$id)->first();
-        $chats = Chat::all()->where('sender_id', $id)->where('receiver_id',$user_id)->first();
+        $chat = Chats::all()->where('sender_id', $user_id)->where('receiver_id',$id)->first();
+        $chats = Chats::all()->where('sender_id', $id)->where('receiver_id',$user_id)->first();
         if($chat ===  null and $chats ===  null){
-            Chat::create([
+            Chats::create([
                 'sender_id' => $user_id,
                 'receiver_id' => $id,
             ]);
         }
-        $chat = Chat::all()->where('sender_id', $user_id)->where('receiver_id',$id)->first();
+        $chat = Chats::all()->where('sender_id', $user_id)->where('receiver_id',$id)->first();
         if($chat ===  null){
-            $chat =  Chat::all()->where('sender_id', $id)->where('receiver_id',$user_id)->first();
+            $chat =  Chats::all()->where('sender_id', $id)->where('receiver_id',$user_id)->first();
         }
         Message::create([
             'chat_id' =>$chat->id,

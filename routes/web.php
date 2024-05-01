@@ -2,9 +2,8 @@
 
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\profile\OrderController;
-use App\Http\Controllers\profile\OrderCreateController;
 use App\Http\Controllers\profile\UserController;
+use App\Http\Controllers\profile\OrderCreateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,13 +23,10 @@ Route::get('/q', function () {
     return view('q');
 });
 
+
 Route::get('profile/user/{id}', [UserController::class, 'index'])->name('user');
 
 Route::middleware('Customer')->group(function () {
-
-    Route::get('profile/order', [OrderController::class, 'create'])->name('order');
-
-    Route::post('profile/order', [OrderController::class, 'create']);
 
     Route::get('profile/order-create',[OrderCreateController::class, 'create'])->name('order-create');
 });

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\profile;
 
 use App\Http\Controllers\Controller;
-use App\Models\Chat;
+use App\Models\Chats;
 use App\Models\Message;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -12,7 +12,7 @@ class MessagesController extends Controller
 {
     public function index(){
         $user_id = auth()->user()->id;
-        $chats = Chat::where('sender_id', $user_id)->orWhere('receiver_id', $user_id)->get();
+        $chats = Chats::where('sender_id', $user_id)->orWhere('receiver_id', $user_id)->get();
         $chat_users = [];
         foreach ($chats as $chat) {
             if ($chat->sender_id == $user_id) {

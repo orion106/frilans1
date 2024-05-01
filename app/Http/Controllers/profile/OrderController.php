@@ -9,7 +9,7 @@ use Illuminate\View\View;
 
 class OrderController extends Controller
 {
-    public function create(Request $request): View
+    public function index(Request $request): View
     {
         return view('profile.order-list',[
         'user' => $request->user(),
