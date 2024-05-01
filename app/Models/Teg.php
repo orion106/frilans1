@@ -11,6 +11,6 @@ class Teg extends Model
     protected $table = 'teg';
     protected $fillable = [
         'id',
-        'teg-name'
+        'teg_name'
     ];
 }

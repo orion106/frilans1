@@ -34,8 +34,16 @@
                 <tr>
                     <th scope="row">{{$tegs->id}}</th>
                     <td>{{$tegs->teg_name}}</td>
-                    <td><button></button></td>
-                    <td>@mdo</td>
+                    <td>
+                        <a href="{{ route('teg-update', ['id' => $tegs->id]) }}">
+                            <button>Редактировать</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ route('teg-delete', ['id' => $tegs->id]) }}">
+                            <button>Удалить</button>
+                        </a>
+                    </td>
                 </tr>
             @endforeach
             </tbody>

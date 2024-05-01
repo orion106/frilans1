@@ -10,6 +10,8 @@ use App\Http\Controllers\profile\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\teg\TegCreateController;
+use App\Http\Controllers\admin\teg\TegDeleteController;
+use App\Http\Controllers\admin\teg\TegUpdateController;
 
 Route::middleware('guest')->group(function () {
 
@@ -45,4 +47,11 @@ Route::middleware('admin')->group(function (){
     Route::get('/teg/create', [TegCreateController::class, 'index'])->name('teg-create');
 
     Route::post('/teg/create', [TegCreateController::class, 'store']);
+
+    Route::get('/teg/delete/{id}',[TegDeleteController::class, 'index'])->name('teg-delete');
+
+    Route::get('/teg/update/{id}',[TegUpdateController::class, 'index'])->name('teg-update');
+
+    Route::post('/teg/update/{id}',[TegUpdateController::class, 'store']);
+
 });

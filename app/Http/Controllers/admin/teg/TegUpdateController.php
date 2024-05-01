@@ -7,24 +7,24 @@ use App\Models\Teg;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class TegCreateController extends Controller
+class TegUpdateController extends Controller
 {
-    public function index(): View
+    public function index($id): View
     {
-        $teg = Teg::all();
-        return view('admin.teg.teg-create',[
+        $teg = Teg::find($id);
+        return view('admin.teg.teg-update',[
             'teg' => $teg
         ]);
     }
-
     public function store(Request $request)
     {
         $request -> validate([
             'teg_name' => ['required','string'],
         ]);
-        $teg = Teg::create([
+        $teg = Teg::where('id', $request->id)->update([
             'teg_name' => $request->teg_name,
         ]);
         return redirect()->route('teg-create');
     }
+
 }

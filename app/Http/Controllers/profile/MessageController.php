@@ -8,6 +8,7 @@ use App\Models\Message;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Auth;
 
 
 class MessageController extends Controller
