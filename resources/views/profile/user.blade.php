@@ -12,7 +12,7 @@
 </section>
 <div class="profile-main container">
     <div class="profile-main-content">
-        <h1>Профиль</h1>
+        <h1 class="profile">Профиль</h1>
         <hr>
         <div class="profile-main-inform">
                 <div class="profile-label">
