@@ -456,6 +456,22 @@ nav a button img{
     font: inherit;
     color: inherit;
 }
+/*----------------chats----------------------------------------------- */
+.message-list-block{
+    display: flex;
+}
+.image_user{
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.name_user{
+    padding-top: 30px;
+    padding-left: 30px;
+}
+.message_chat{
+    padding-top: 59px;
+    margin-left: -88px;
+}
 /*----------------chats-----------------------------------------------*/
 
 .message-list-block{
@@ -473,3 +489,47 @@ nav a button img{
     padding-top: 59px;
     margin-left: -88px;
 }
+.explanation_blocks{
+    width: 850px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.wrapper-title{
+    display: flex;
+}
+.title{
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.question{
+    text-align: center;
+}
+.question2{
+    margin-top: 60px;
+    text-align: center;
+}
+.btn-create{
+    border: 0px;
+    width: 145px;
+    height: 35px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.btn-create:hover{
+    background-color: #0D1212;
+    color: white;
+    transition: 0.5s;
+}
+.title-2{
+    display: flex;
+}
+.btn-create-wrapper{
+    margin: 0 auto;
+}
+.btn-123{
+    margin: 0 auto;
+    width: 145px;
+    height: 35px;
+}
+
