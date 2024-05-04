@@ -1,3 +1,4 @@
+
 <x-layout.navigation></x-layout.navigation>
 <section class="container">
     <div class="header-profile">
@@ -11,15 +12,40 @@
     </div>
 </section>
 <div class="profile-main container">
-    <form class="create_order_form">
-        <x-profile.input-profile>
-            placeholder="Имя заказа" type="text""
-        </x-profile.input-profile>
-
-        <x-profile.input-profile>
-            placeholder="Опишите заказ" type="text""
-        </x-profile.input-profile>
-    </form>
+    <div class="profile-main-content">
+        <h1>Создание заказа</h1>
+        <form action="{{route('order-create')}}" method="POST">
+            @csrf
+            <div class="profile-label">
+                <label>Название</label>
+                <x-profile.input-profile>
+                    placeholder="Название" type="text"  value="" name="name_order"
+                </x-profile.input-profile>
+            </div>
+            <div class="profile-label">
+                <label>Описание</label>
+                <x-profile.input-profile>
+                    placeholder="Описание" type="text"  value="" name="description_order"
+                </x-profile.input-profile>
+            </div>
+            <div class="profile-label">
+                <label>Имя</label>
+                <x-profile.input-profile>
+                    placeholder="Имя" type="text" value=""
+                </x-profile.input-profile>
+            </div>
+            <select class="select_teg" name="teg[]" id="countries" multiple="multiple">
+                    @foreach($teg as $tegs)
+                    <option value="{{$tegs->id}}">{{$tegs->teg_name}}</option>
+                    @endforeach
+            </select>
+            <button class="profile-btn" type="submit">Далее</button>
+        </form>
+    </div>
     <x-profile.sidebar>
     </x-profile.sidebar>
 </div>
+<script src="{{ asset('js/main.js') }}"></script>
+<script>
+    new MultiSelectTag('countries')
+</script>

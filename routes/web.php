@@ -1,6 +1,8 @@
 <?php
 
 
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\profile\UserController;
 use App\Http\Controllers\profile\OrderCreateController;
@@ -16,19 +18,19 @@ use App\Http\Controllers\profile\OrderCreateController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/q', function () {
     return view('q');
 });
-
+Route::get('order/{id}', [OrderController::class, 'index'])->name('order');
 
 Route::get('profile/user/{id}', [UserController::class, 'index'])->name('user');
 
-Route::middleware('Customer')->group(function () {
+Route::middleware(['Customer'])->group(function () {
 
-    Route::get('profile/order-create',[OrderCreateController::class, 'create'])->name('order-create');
+    Route::get('profile/order-create',[OrderCreateController::class, 'index'])->name('order-create');
+
+    Route::post('profile/order-create',[OrderCreateController::class, 'create']);
 });
 require __DIR__.'/auth.php';
 

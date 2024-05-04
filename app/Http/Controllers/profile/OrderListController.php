@@ -7,7 +7,7 @@ use App\Models\Group;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class OrderController extends Controller
+class OrderListController extends Controller
 {
     public function index(Request $request): View
     {
