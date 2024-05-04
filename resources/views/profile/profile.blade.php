@@ -12,7 +12,7 @@
 </section>
 <div class="profile-main container">
     <div class="profile-main-content">
-        <h1>Профиль</h1>
+        <h1 class="profile">Профиль</h1>
         <hr>
         <div class="profile-main-inform">
             <form action="{{route('profile')}}" method="POST">
@@ -68,6 +68,25 @@
                     </x-profile.input-profile>
                 </div>
                 @endif
+                <hr>
+                <div class="profile-label">
+                <label>Телеграмм</label>
+                    <x-profile.input-profile>
+                        placeholder="@name" type="text"
+                    </x-profile.input-profile>
+                </div>
+                <div class="profile-label">
+                <label>Номер ВКонтакте</label>
+                    <x-profile.input-profile>
+                        placeholder="Введите ссылку" type="text"
+                    </x-profile.input-profile>
+                </div>
+                <div class="profile-label">
+                <label>Номер телефона</label>
+                    <x-profile.input-profile>
+                        placeholder="8-***-***-**-**" type="text"
+                    </x-profile.input-profile>
+                </div>
                 <button class="profile-btn" type="submit">Далее</button>
             </form>
 
