@@ -19,7 +19,7 @@
             <div class="profile-label">
                 <label>Название</label>
                 <x-profile.input-profile>
-                    placeholder="Название" type="text"  value="" name="name_order"
+                    placeholder="Название" type="text"  value="" name="name_order" 
                 </x-profile.input-profile>
             </div>
             <div class="profile-label">
@@ -29,16 +29,17 @@
                 </x-profile.input-profile>
             </div>
             <div class="profile-label">
-                <label>Имя</label>
-                <x-profile.input-profile>
-                    placeholder="Имя" type="text" value=""
-                </x-profile.input-profile>
+                <label>Требования</label>
+                <textarea class="textarea_order" name="requirements"></textarea>
             </div>
-            <select class="select_teg" name="teg[]" id="countries" multiple="multiple">
-                    @foreach($teg as $tegs)
-                    <option value="{{$tegs->id}}">{{$tegs->teg_name}}</option>
+            <div class="profile-label">
+            <label>Нужные навыки</label>
+            <select class="select_teg" name="teg[]" id="countries"  multiple="multiple">
+                    @foreach($teg as $tags)
+                    <option value="{{$tags->id}}">{{$tags->teg_name}}</option>
                     @endforeach
             </select>
+            </div>
             <button class="profile-btn" type="submit">Далее</button>
         </form>
     </div>

@@ -2,8 +2,8 @@
 <section class="container">
     <div class="header-profile">
         <div>
-            <img src="{{asset('/img/Component 6.png')}}" alt="Profile avatar">
-            <h1>Иванов Иван</h1>
+            <img src="{{asset('storage/'.$user->photo)}}" alt="Profile avatar">
+            <h1>{{$user->firstname}} {{$user->surname}}</h1>
         </div>
         <a>
         <button>Добавить работу</button>
@@ -15,8 +15,12 @@
         <h1 class="profile">Профиль</h1>
         <hr>
         <div class="profile-main-inform">
-            <form action="{{route('profile')}}" method="POST">
+            <form action="{{route('profile')}}" method="POST" enctype="multipart/form-data">
                 @csrf
+                <div class="profile-label">
+                    <label>Фото</label>
+                    <input type="file" name="photo" class="photo" value="{{$user->photo}}">
+                </div>
                 <div class="profile-label">
                     <label>Имя</label>
                     <x-profile.input-profile>

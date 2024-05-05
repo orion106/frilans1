@@ -26,14 +26,30 @@ class ProfileController extends Controller
             'firstname' => ['required','string'],
             'surname' => ['required','string'],
             'lastname' => ['required','string'],
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
 
         ]);
-        $user = User::where('id', $user_id)->update([
+
+        if ($request->hasFile('photo')) {
+            $image = $request->file('photo');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('public/images', $imageName);
+            $images = 'images/' . $imageName;
+            $user = User::where('id', $user_id)->update([
+                'photo' => $images,
                 'firstname' => $request->firstname,
                 'surname' => $request->surname,
                 'lastname' => $request->lastname,
                 'group_id' => $request->group_id,
             ]);
+        }else {
+            $user = User::where('id', $user_id)->update([
+                'firstname' => $request->firstname,
+                'surname' => $request->surname,
+                'lastname' => $request->lastname,
+                'group_id' => $request->group_id,
+            ]);
+        }
 //        dd($request );
         return redirect()->route('profile');
     }

@@ -25,6 +25,7 @@ class OrderCreateController extends Controller
         $order = Order::firstOrCreate([
             'name_order' => $request->name_order,
             'description_order' => $request->description_order,
+            'requirements' => $request->requirements,
             'FK_Customer' => $user_id
         ]);
         $order ->tagsist()->attach($Tags_id);

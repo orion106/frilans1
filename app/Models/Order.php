@@ -12,6 +12,7 @@ class Order extends Model
     protected $fillable = [
         'id',
         'name_order',
+        'requirements',
         'description_order',
         'FK_Customer',
         'FK_Executor',

@@ -15,11 +15,12 @@ return new class extends Migration
             $table ->id();
             $table ->string('name_order');
             $table ->string('description_order');
+            $table ->string('requirements');
             $table->unsignedBigInteger('FK_Customer');
             $table->foreign('FK_Customer')->references('id')->on('users');
-            $table->unsignedBigInteger('FK_Executor');
+            $table->unsignedBigInteger('FK_Executor')->nullable();
             $table->foreign('FK_Executor')->references('id')->on('users');
-            $table ->integer('status');
+            $table ->integer('status')->nullable();
             $table->timestamps();
         });
     }
