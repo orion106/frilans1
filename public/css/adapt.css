@@ -1,0 +1,136 @@
+@media only screen and (max-width: 960px){
+    .profile-main-content{
+        margin-right: 10px;
+    }
+    .btn-create{
+        margin-bottom: 100px;
+    }
+}
+@media only screen and (max-width: 761px){
+    .auth-btn{
+       border: 0;
+    }
+    .nav-text{
+        font-size: 13px;
+    }
+    .active-nav-text{
+        font-size: 13px;
+    }
+    .log-nav{
+        padding-left: 10px;
+        width: 35px;
+        height: 35px;
+    }
+    .lk-1{
+        display: none;
+    }
+    .profile{
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    .input-profile{
+        width: 330px;
+        height: 30px;
+        font-size: 11px;
+    }
+    .select-profile{
+        width: 330px;
+        height: 30px;
+        font-size: 11px;
+    }
+    .banner{
+        height: 200px;
+    }
+    .teg{
+        font-size: 13px;
+        width: 65px;
+        height: 17px;
+    }
+    .content-banner h1{
+        font-size: 16px;
+        margin-left: -60px;
+        margin-top: -25px;
+    }
+    .content-banner h2{
+        font-size: 14px;
+        margin-left: -60px;
+        margin-top: -5px;
+    }
+    .order img{
+        width: 120px;
+        height: 120px;
+    }
+    .order h2{
+        font-size: 14px;
+    }
+    .order h3{
+        font-size: 10px;
+    }
+    .order p{
+        font-size: 10px;
+    }
+    .order hr{
+        margin-top: -1px;
+        height: 150px;
+    }
+    .s{
+       max-width: 500px;
+        word-wrap: break-word;
+    }
+    .order-card{
+        width: 520px;
+        height: 150px;
+
+    }
+    .sidebar-button h2{
+        font-size: 10px;
+    }
+    .sidebar-button{
+        height: 30px;
+    }
+    .header-profile h1{
+        font-size: 16px;
+    }
+    .header-profile img{
+        width: 50px;
+        height: 50px;
+    }
+    .header-profile button{
+        width: 100px;
+        height: 30px;
+        font-size: 10px;
+    }
+    .profile-main-content label{
+        font-size: 13px;
+    }
+    .question{
+        font-size: 20px;
+        max-width: 680px;
+    }
+    .explanation_blocks{
+        max-width: 540px;
+    }
+    .numder h2{
+        font-size: 17px;
+    }
+    .title-block h5{
+        font-size: 13px;
+    }
+    .description-block{
+        font-size: 10px;
+    }
+    .question2{
+        font-size: 20px;
+    }
+    .btn-create{
+        width: 110px;
+        height: 30px;
+        font-size: 12px;
+    }
+    .btn-123{
+        width: 110px;
+    }
+    .profile-btn{
+        margin-top: 20px;
+    }
+}

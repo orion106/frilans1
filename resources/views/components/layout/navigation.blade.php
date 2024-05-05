@@ -7,6 +7,8 @@
     <title>Your Title Here</title>
     <link rel="stylesheet" type="text/css" href="{{ url('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/main.js') }}">
+    <link rel="stylesheet" href="{{ asset('css/adapt.css') }}">
 </head>
 <body>
 <header class="d-flex align-items-center">
@@ -32,9 +34,9 @@
             </ul>
             @auth()
             <a href="{{route('profile')}}">
-                <button>
-                    <img src="{{ asset('img/avatar.svg')}}" alt="Профиль">
-                    <span>Личный кабинет</span>
+                <button class="auth-btn">
+                    <img src="{{ asset('img/avatar.svg')}}" alt="Профиль" class="log-nav">
+                    <span class="lk-1">Личный кабинет</span>
                 </button>
             </a>
             @endauth

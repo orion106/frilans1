@@ -6,7 +6,7 @@
             <div class="block-1-1">
                 <div class="numder"><h2>01</h2></div><hr>
                 <div class="title-block"><h5>Регистрация</h5></div>
-                <div>Создайте аккаунт</div>
+                <div class="description-block">Создайте аккаунт</div>
             </div>
             <div class="block-2-2">
                 <div class="numder"><h2>02</h2></div><hr>

@@ -33,4 +33,3 @@ Route::middleware(['Customer'])->group(function () {
     Route::post('profile/order-create',[OrderCreateController::class, 'create']);
 });
 require __DIR__.'/auth.php';
-
