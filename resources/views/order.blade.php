@@ -5,12 +5,14 @@
         <div class="inf-order">
             <h1>{{$order->name_order}}</h1>
             <h6 class="exp">Требуемый опыт работы: 3–6 лет</h6>
-            <button class="response">
-                Откликнуться
-            </button>
+            <a href="{{ route('response', ['id' => $order->id]) }}">
+                <button class="response">
+                    Откликнуться
+                </button>
+            </a>
         </div>
         <div class="inf-employer">
-            <img src="вап">
+            <img src="{{asset('storage/'.$order->photo)}}" class="photo_store">
             <h3 class="FIO">{{$order->firstname}} {{$order->surname}}</h3>
         </div>
     </div>

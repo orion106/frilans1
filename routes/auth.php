@@ -7,6 +7,7 @@ use App\Http\Controllers\profile\MessageController;
 use App\Http\Controllers\profile\MessagesController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\profile\OrderListController;
+use App\Http\Controllers\ResponseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\teg\TegCreateController;
@@ -25,6 +26,9 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+
+    Route::get('/response/{id}', [ResponseController::class, 'index'])->name('response');
+
 
     Route::get('/profile/order', [OrderListController::class, 'index'])->name('order-list');
 

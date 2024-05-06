@@ -467,22 +467,7 @@ nav a button img{
     font: inherit;
     color: inherit;
 }
-/*----------------chats----------------------------------------------- */
-.message-list-block{
-    display: flex;
-}
-.image_user{
-    padding-left: 20px;
-    padding-top: 20px;
-}
-.name_user{
-    padding-top: 30px;
-    padding-left: 30px;
-}
-.message_chat{
-    padding-top: 59px;
-    margin-left: -88px;
-}
+
 /*----------------chats-----------------------------------------------*/
 .s{
     width: 800px;
@@ -744,4 +729,14 @@ nav a button img{
     background: rgb(13, 18, 18);
     color: white;
     padding-top: 5px;
+}
+.photo_store{
+    width: 80px;
+    height: 82px;
+    border-radius: 50%;
+}
+.ss{
+    width: 100%;
+    height: 70px;
+    border: 0.5px solid rgb(65, 64, 64);
 }

@@ -2,8 +2,8 @@
 <section class="container">
     <div class="header-profile">
         <div>
-            <img src="{{asset('/img/Component 6.png')}}" alt="Profile avatar">
-            <h1>Иванов Иван</h1>
+            <img src="{{asset('storage/'.$user_my->photo)}}" alt="Profile avatar">
+            <h1>{{$user_my->surname}} {{$user_my->firstname}}</h1>
         </div>
         <a>
             <button>Добавить работу</button>
@@ -27,7 +27,7 @@
                     <p>{{$user->surname}} {{$user->firstname}}</p>
                 </a>
                 <a href="{{ route('user', ['id' => $user->id]) }}">
-                    <img class="header-message-img" src="{{asset('/img/Component 6.png')}}" alt="Profile avatar">
+                    <img class="header-message-img" src="{{asset('storage/'.$user->photo)}}" alt="Profile avatar">
                 </a>
             </div>
             <hr class="hr-message">

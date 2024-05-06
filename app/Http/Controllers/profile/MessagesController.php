@@ -12,6 +12,7 @@ class MessagesController extends Controller
 {
     public function index(){
         $user_id = auth()->user()->id;
+        $user_my = User::all()->find($user_id);
         $chats = Chats::where('sender_id', $user_id)->orWhere('receiver_id', $user_id)->get();
         $chat_users = [];
         foreach ($chats as $chat) {
@@ -23,6 +24,10 @@ class MessagesController extends Controller
         }
         $unique_chat_users = array_unique($chat_users);
         $user = User::whereIn('id', $unique_chat_users)->get();
-        return view('profile.messages', compact('user'));
+
+        return view('profile.messages',[
+            'user_my' => $user_my,
+            'user' => $user,
+        ]);
     }
 }

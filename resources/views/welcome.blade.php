@@ -9,7 +9,6 @@
                 фриланса с колледжем
             </h2>
         </div>
-        <button>Создать резюме</button>
     </div>
 </section>
 <div class="order container">
@@ -21,35 +20,31 @@
     <x-teg>Тег</x-teg>
     </div>
     <div class="card-order">
-
-            <a href="выаер">
+    @foreach($orders as $order)
+            <a href="{{ route('order', ['id' => $order->id]) }}">
             <div class="order-card">
                 <img src="{{asset('img/developer_male 2.png')}}" alt="">
                 <div class="s">
                     <div class="teg-bar">
-
-                        <x-teg>выпквпв</x-teg>
-                        <x-teg>выпквпв</x-teg>
-                        <x-teg>выпквпв</x-teg>
-                        <x-teg>выпквпв</x-teg>
-
-
+                        @foreach($order->teg_names as $teg)
+                        <x-teg>{{$teg}}</x-teg>
+                        @endforeach
                     </div>
                     <div class="order-text">
-                        <h2>ыкпывкпвкпукерукерукеркуеркуеркуер</h2>
-                        <h3>ывпаывпукерукееркуеруекнркаер</h3>
+                        <h2>{{$order->name_order}}</h2>
+                        <h3>{{$order->description_order}}</h3>
                     </div>
                 </div>
                 <div class="order-cred">
                     <hr>
-                    <div>
+                    <div class="h">
                         <h3>Опыт работы:  от 3 лет</h3>
                         <h3>Строки работы: месяц </h3>
                     </div>
                 </div>
             </div>
             </a>
-
+        @endforeach
     </div>
 </div>
 
